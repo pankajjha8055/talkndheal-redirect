@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opening App...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload = function () {
+      const userId = new URLSearchParams(window.location.search).get("userId") || "123";
+      const appUrl = `talkndhealuser://profile/${userId}`;
+      const appStoreURL = "https://apps.apple.com/app/idYOUR_APP_ID"; // Replace this
+
+      const now = Date.now();
+      setTimeout(() => {
+        if (Date.now() - now < 1500) {
+          window.location.href = appStoreURL;
+        }
+      }, 1000);
+
+      window.location = appUrl;
+    };
+  </script>
+</head>
+<body>
+  <p>Opening the Talkndheal app...</p>
+</body>
+</html>
 
